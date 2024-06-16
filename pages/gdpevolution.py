@@ -90,7 +90,7 @@ def mapping_demo():
 
     data = load_data()
     beg_year, end_year = st.slider("Year", min_value=2000, max_value=2023, value=(2000, 2023), step=1)
-    countries = st.multiselect("Countries", data["NAME_ENGL"].unique(), data["NAME_ENGL"].unique())
+    countries = st.multiselect("Countries", data["NAME_ENGL"].unique(), ["Spain", "France", "Germany", "Italy", "United Kingdom"])
     if countries:
         data = data[data["NAME_ENGL"].isin(countries)]
         years = data.columns[5:]
